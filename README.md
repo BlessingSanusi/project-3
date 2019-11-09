@@ -1,16 +1,24 @@
 # Personal Finance App
 A full stack Mern App that tracks all your transaction from your bank account
 
+## Problem
+
+People don't manage their money well and their finances starts getting out of control which might eventually leads them to alots of debt.
+
+![landing page](images/landing-page.png)
+
+![Dashboard page](images/finance-dashboard.png)
+
 
 ## Overview
 
-* Users can creates profiles with encrypted passwords
+* Users can creates profiles with encrypted passwords.
 
-* Users can add account via plaid api
+* Users can add account via plaid api which decreases the time of manually writing out transactions.
 
-* Users can view account transactions and balances
+* Users can view account transactions and balances.
 
-* Users can delete account
+* Users gets notification of an upcoming bill.
 
 
 ## Technology Used
