@@ -3,11 +3,13 @@ A full stack Mern App that tracks all your transaction from your bank account
 
 ## Problem
 
-People don't manage their money well and their finances starts getting out of control which might eventually leads them to alots of debt.
+People don't manage their money well and their finances starts getting out of control which might eventually leads alots of debt.
 
 ![landing page](images/landing-page.png)
 
 ![Dashboard page](images/finance-dashboard.png)
+
+![Transaction page](images/Transaction-page.png)
 
 
 ## Overview
