@@ -1,9 +1,6 @@
 # Personal Finance App
 A full stack Mern App that tracks all your transaction from your bank account
 
-## Problem
-
-People don't manage their money well and their finances starts getting out of control which might eventually leads alots of debt.
 
 ![landing page](images/landing-page.png)
 
@@ -25,17 +22,17 @@ People don't manage their money well and their finances starts getting out of co
 
 ## Technology Used
 
-* MongoDB for darabase
+* MongoDB for database
 
-* Express & Node for backend
+* Express & Node for backend development
 
-* React for front end
+* React for front end development
 
 * Redux for state management
 
 * Chartjs for dashboard ui
 
-* Bootstrap
+* Bootstrap 
 
 ## Api
 
