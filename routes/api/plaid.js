@@ -4,16 +4,15 @@ const router = express.Router();
 const passport = require("passport");
 const moment = require("moment");
 const mongoose = require("mongoose");
+const config = require('config');
 // Load Account and User models
 const Account = require("../../models/Account");
 const User = require("../../models/User");
-const PLAID_CLIENT_ID = "YOUR_CLIENT_ID";
-const PLAID_SECRET = "YOUR_SECRET";
-const PLAID_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
 const client = new plaid.Client(
-  PLAID_CLIENT_ID,
-  PLAID_SECRET,
-  PLAID_PUBLIC_KEY,
+  config.get('PLAID_CLIENT_ID'),
+  config.get('PLAID_SECRET'),
+  config.get('PLAID_PUBLIC_KEY'),
   plaid.environments.sandbox,
   { version: "2019-11-07" }
 );

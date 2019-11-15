@@ -1,9 +1,11 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
+const config = require('config')
 // const routes = require("./routes/api");
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 const passport = require("passport");
 const users = require("./routes/api/users");
@@ -35,13 +37,14 @@ app.get("*", (req, res) => {
 // app.get("/transactions", getTransactions);
   
 // DB Config
-const db = require("./config/keys").mongoURI;
+const db = config.get('mongoURI');
 
 // Connect to MongoDB
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true,
+    useCreateIndex: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
@@ -50,6 +53,7 @@ mongoose
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);

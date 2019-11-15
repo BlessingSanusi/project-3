@@ -2,10 +2,13 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+
+const config = require('config');
+
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+
 // Load User model
 const User = require("../../models/User");
 
@@ -19,6 +22,8 @@ router.post("/register", (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     }
+
+    //Check for exisiting email
   User.findOne({ email: req.body.email }).then(user => {
       if (user) {
         return res.status(400).json({ email: "Email already exists" });
@@ -28,7 +33,8 @@ router.post("/register", (req, res) => {
           email: req.body.email,
           password: req.body.password
         });
-  // Hash password before saving in database
+
+  // Create salt and hash password before saving in database
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
@@ -70,7 +76,7 @@ router.post("/register", (req, res) => {
   // Sign token
           jwt.sign(
             payload,
-            keys.secretOrKey,
+            config.get('secretOrKey'),
             {
               expiresIn: 31556926 // 1 year in seconds
             },
