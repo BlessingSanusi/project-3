@@ -28,6 +28,20 @@ class Login extends Component {
         }
     }
 
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+      };
+    
+      onSubmit = e => {
+        e.preventDefault();
+    
+        const userData = {
+          email: this.state.email,
+          password: this.state.password
+        };
+    
+        this.props.loginUser(userData);
+      };
 
     render() {
         return (

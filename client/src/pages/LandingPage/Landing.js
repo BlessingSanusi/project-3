@@ -36,7 +36,9 @@ e.preventDefault();
                     <div className="col-lg-4 pt-5">
                     <div className="mt-5 mr-5 pt-5">
                         <Register 
-                        handleSubmitBtn = {this.handleSubmitBtn}                        />
+                        handleSubmitBtn = {this.handleSubmitBtn} 
+                        
+                        />
                         </div>
                        
                     <div className="row text-center mt-5 pt-5">
