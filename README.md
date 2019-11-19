@@ -34,6 +34,8 @@ A full stack Mern App that tracks all your transaction from your bank account
 
 * Bootstrap 
 
+* Materialize CSS
+
 ## Api
 
  * Plaid
