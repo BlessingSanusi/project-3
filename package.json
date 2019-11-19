@@ -25,7 +25,6 @@
   "homepage": "https://github.com/BlessingSanusi/project-3#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "config": "^3.2.4",
     "express": "^4.17.1",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",

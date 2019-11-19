@@ -1,7 +1,7 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-const config = require('config')
+// const config = require('config')
 // const routes = require("./routes/api");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,24 +21,10 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 // app.use(routes);
 
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
 
-//   const {
-//     receivePublicToken,
-//     getTransactions
-//     } = require("./controllers/controller");
 
-//     // Get the public token and exchange it for an access token
-// app.post("/auth/public_token", receivePublicToken);
-// // Get Transactions
-// app.get("/transactions", getTransactions);
-  
 // DB Config
-const db = config.get('mongoURI');
-
+const db = require("./config/keys").mongoURI;
 // Connect to MongoDB
 mongoose
   .connect(
