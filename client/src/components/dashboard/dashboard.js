@@ -14,11 +14,7 @@ class Dashboard extends Component {
     this.props.getAccounts();
   }
 
-  // Logout
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
+
 
   // Add account
   handleOnSuccess = (token, metadata) => {
@@ -47,9 +43,7 @@ class Dashboard extends Component {
       dashboardContent = (
         <div className="row">
           <div className="col s12 center-align">
-            <h4>
-              <b>Welcome,</b> {user.name.split(" ")[0]}
-            </h4>
+          
             <p className="flow-text grey-text text-darken-1">
               To get started, link your first bank account below
             </p>
@@ -71,12 +65,12 @@ class Dashboard extends Component {
                 Link Account
               </PlaidLinkButton>
             </div>
-            <button
+            {/* <button
               onClick={this.onLogoutClick}
               className="btn btn-large waves-effect waves-light hoverable red accent-3 main-btn"
             >
               Logout
-            </button>
+            </button> */}
           </div>
         </div>
       );

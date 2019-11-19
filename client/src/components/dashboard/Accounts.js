@@ -49,18 +49,18 @@ class Accounts extends Component {
     const { user, accounts } = this.props;
     const { transactions, transactionsLoading } = this.props.plaid;
 
-    let accountItems = accounts.map(account => (
-      <li key={account._id} style={{ marginTop: "1rem" }}>
-        <button
-          style={{ marginRight: "1rem" }}
-          onClick={this.onDeleteClick.bind(this, account._id)}
-          className="btn btn-small btn-floating waves-effect waves-light hoverable red accent-3"
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-        <b>{account.institutionName}</b>
-      </li>
-    ));
+    // let accountItems = accounts.map(account => (
+    //   <li key={account._id} style={{ marginTop: "1rem" }}>
+    //     <button
+    //       style={{ marginRight: "1rem" }}
+    //       onClick={this.onDeleteClick.bind(this, account._id)}
+    //       className="btn btn-small btn-floating waves-effect waves-light hoverable red accent-3"
+    //     >
+    //       <i className="fas fa-trash-alt"></i>
+    //     </button>
+    //     <b>{account.institutionName}</b>
+    //   </li>
+    // ));
 
     // Setting up data table
     const transactionsColumns = [
@@ -95,7 +95,7 @@ class Accounts extends Component {
           >
             <i className="fas fa-sign-out-alt fa-2x"></i>Log Out
           </button>
-          <h4>
+          {/* <h4>
             <b>Welcome!</b>
           </h4>
           <p className="grey-text text-darken-1">
@@ -107,11 +107,11 @@ class Accounts extends Component {
           <p className="grey-text text-darken-1">
             Add or remove your bank accounts below
           </p>
-          <ul>{accountItems}</ul>
+          <ul>{accountItems}</ul> */}
           <PlaidLinkButton
             buttonProps={{
               className:
-                "btn btn-large waves-effect waves-light hoverable blue accent-3 main-btn"
+                "btn btn-large waves-effect waves-light mt-5  hoverable blue accent-3 main-btn"
             }}
             plaidLinkProps={{
               clientName: "FIN-TRACK",
