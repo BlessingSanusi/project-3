@@ -9,7 +9,6 @@ import {
 } from "../../actions/accountActions";
 import { logoutUser } from "../../actions/authActions";
 import MaterialTable from "material-table"; 
-
 // const keys = require("../../../../config/keys")
 
 class Accounts extends Component {
@@ -50,18 +49,18 @@ class Accounts extends Component {
     const { user, accounts } = this.props;
     const { transactions, transactionsLoading } = this.props.plaid;
 
-    // let accountItems = accounts.map(account => (
-    //   <li key={account._id} style={{ marginTop: "1rem" }}>
-    //     <button
-    //       style={{ marginRight: "1rem" }}
-    //       onClick={this.onDeleteClick.bind(this, account._id)}
-    //       className="btn btn-small btn-floating waves-effect waves-light hoverable red accent-3"
-    //     >
-    //       <i className="fas fa-trash-alt"></i>
-    //     </button>
-    //     <b>{account.institutionName}</b>
-    //   </li>
-    // ));
+    let accountItems = accounts.map(account => (
+      <li key={account._id} style={{ marginTop: "1rem" }}>
+        <button
+          style={{ marginRight: "1rem" }}
+          onClick={this.onDeleteClick.bind(this, account._id)}
+          className="btn btn-small btn-floating waves-effect waves-light hoverable red accent-3"
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+        <b>{account.institutionName}</b>
+      </li>
+    ));
 
     // Setting up data table
     const transactionsColumns = [
@@ -88,12 +87,12 @@ class Accounts extends Component {
     console.log(transactionsData)
 
     return (
-      <div>
- <div className="row">
+      <div className="row">
         <div className="col s12">
           <button
             onClick={this.onLogoutClick}
-            className="btn-flat waves-effect">
+            className="btn-flat waves-effect"
+          >
             <i className="fas fa-sign-out-alt fa-2x"></i>Log Out
           </button>
           {/* <h4>
@@ -112,7 +111,7 @@ class Accounts extends Component {
           <PlaidLinkButton
             buttonProps={{
               className:
-                "btn btn-large waves-effect waves-light mt-5  hoverable blue accent-3 main-btn"
+                "btn btn-large waves-effect waves-light hoverable blue accent-3 main-btn"
             }}
             plaidLinkProps={{
               clientName: "FIN-TRACK",
@@ -152,8 +151,6 @@ class Accounts extends Component {
           )}
         </div>
       </div>
-      </div>
-     
     );
   }
 }
