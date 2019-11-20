@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getAccounts, addAccount } from "../../actions/accountActions";
 // import Sidebar from '../sidebarNavbar/Sidebar'
+import DashboardNav from "./DashboardNav"
 
 import Accounts from "./Accounts";
 import Spinner from "./Spinner";
@@ -76,7 +77,13 @@ class Dashboard extends Component {
       );
     }
 
-    return <div className="container">{dashboardContent}</div>
+    return (
+      <div>
+        <DashboardNav />
+        <div className="container">{dashboardContent}</div>
+      </div>
+      
+    )
   }
 }
 

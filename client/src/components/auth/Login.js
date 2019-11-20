@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+import Navbar from '../layout/Navbar'
+
 class Login extends Component {
   constructor() {
     super();
@@ -53,7 +55,10 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
+      <div>
+        <Navbar />
+<div className="container">
+        
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 text-center">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -117,6 +122,9 @@ class Login extends Component {
           </div>
         </div>
       </div>
+      </div>
+
+     
     );
   }
 }

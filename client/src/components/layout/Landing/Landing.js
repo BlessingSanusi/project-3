@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import Navbar from '../Navbar'
 import LandingImage from "../../../images/landingpage.png"
 import AppleStore from "../../../images/appstore.png"
 import GooglePlay from "../../../images/googleplay.png"
 import './landingstyle.css'
-import { display } from '@material-ui/system';
+
 
 class Landing extends Component {
     componentDidMount() {
@@ -24,6 +26,8 @@ e.preventDefault();
     render() {
         return (
             <div>
+
+              <Navbar />
        
                 <div className="row">
                   

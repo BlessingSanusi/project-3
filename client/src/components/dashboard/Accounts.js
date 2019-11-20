@@ -9,6 +9,7 @@ import {
 } from "../../actions/accountActions";
 import { logoutUser } from "../../actions/authActions";
 import MaterialTable from "material-table"; 
+
 // const keys = require("../../../../config/keys")
 
 class Accounts extends Component {
@@ -87,12 +88,12 @@ class Accounts extends Component {
     console.log(transactionsData)
 
     return (
-      <div className="row">
+      <div>
+ <div className="row">
         <div className="col s12">
           <button
             onClick={this.onLogoutClick}
-            className="btn-flat waves-effect"
-          >
+            className="btn-flat waves-effect">
             <i className="fas fa-sign-out-alt fa-2x"></i>Log Out
           </button>
           {/* <h4>
@@ -151,6 +152,8 @@ class Accounts extends Component {
           )}
         </div>
       </div>
+      </div>
+     
     );
   }
 }
